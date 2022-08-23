@@ -1,9 +1,9 @@
 const Post = {
     author: ({ userId }, args, { AuthorModel }) => {
-        return AuthorModel.findById(author => author.id === userId);
+        return AuthorModel.find(author => author.id === userId);
     }
 }
 
 module.exports = {
     Post
-}
+}``
