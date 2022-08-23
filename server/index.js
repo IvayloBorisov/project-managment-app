@@ -8,7 +8,10 @@ const { typeDefs } = require('./schema/shema');
 const { Query } = require('./resolvers/Query');
 const { Author } = require('./resolvers/Author');
 const { Post } = require('./resolvers/Post');
-const { authors, posts } = require('./data/data');
+
+//Mongoose models
+const AuthorModel = require('./models/Author');
+const PostModel = require('./models/Post');
 
 //Connect to the database
 connectDB();
@@ -22,8 +25,8 @@ const server = new ApolloServer({
         Post
     },
     context: {
-        authors,
-        posts
+        AuthorModel,
+        PostModel
     }
 });
 
