@@ -1,6 +1,6 @@
 const Post = {
-    author: ({ userId }, args, { authors }) => {
-        return authors.find(author => author.id === userId);
+    author: ({ userId }, args, { AuthorModel }) => {
+        return AuthorModel.findById(author => author.id === userId);
     }
 }
 
